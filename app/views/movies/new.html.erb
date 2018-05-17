@@ -1,0 +1,75 @@
+<h1> Create Movie Form</h1>
+
+
+<%= form_for(@movie) do |form| %>
+
+  <div class="row form-group">
+    <div class="col-sm-5">
+      <%= form.label :title %>
+      <%= form.text_field :title, autofocus:true, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row field form-group">
+    <div class="col-sm-5">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row field form-group">
+    <div class="col-sm-5">
+      <%= form.label :duration%>
+      <%= form.number_field :duration, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row field form-group">
+    <div class="col-sm-5">
+      <%= form.label :release_date%>
+      <%= form.date_select :release_date, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row field form-group">
+    <div class="col-sm-5">
+      <%= form.label :director_id %>
+      <%= form.select :director_id do %>
+        <% @directors.each do |dir| -%>
+          <%= content_tag(:option, dir.first_name + " " + dir.last_name, value: dir.id) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%=fields_for @movie.address do |f|%>
+    <div class="row form-group">
+      <div class="col-sm-5">
+        <%= f.label :street %>
+        <%= f.text_field :street, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-sm-5">
+        <%= f.label :apartment %>
+        <%= f.select :apartment, [['Yes', true], ['No', false]], class: "form-control" %>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-sm-5">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-sm-5">
+        <%= f.label :zipcode %>
+        <%= f.text_field :zipcode, class: "form-control" %>
+      </div>
+    </div>
+  <%end%>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success" %>
+  </div>
+<% end %>

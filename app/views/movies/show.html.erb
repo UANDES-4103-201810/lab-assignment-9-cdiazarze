@@ -1,0 +1,45 @@
+
+
+  <h1><span class="glyphicon glyphicon-movie"> Movie: <%= @movie.title%></span></h1><br>
+
+
+<div class="row ">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Description </strong></h4>
+      <%= @movie.description %>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Duration </strong></h4>
+      <%= @movie.duration %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Director </strong></h4>
+      <%= Director.find(@movie.director_id).first_name%> <%= Director.find(@movie.director_id).last_name%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Release Date </strong></h4>
+      <%= @movie.release_date%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Address </strong></h4>
+      <%=@address[0].street%>
+    </div>
+  </div>
+</div>

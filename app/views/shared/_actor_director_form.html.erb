@@ -1,0 +1,41 @@
+<%= form_tag("/persons", method: "post") do %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= label_tag(:first_name, "First Name:") %>
+        <%= text_field_tag :first_name, "",class:"form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= label_tag(:last_name, "Last Name:") %>
+        <%= text_field_tag :last_name, "",class:"form-control"  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= label_tag(:description, "Description:") %>
+        <%= text_area_tag(:description, "",class:"form-control" ) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= label_tag(:birth_date, "Birth Date:") %>
+        <%= date_field_tag(:birth_date, "",class:"form-control" ) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= radio_button_tag('role', 'director') %>
+        <%= label_tag('Director') %>
+        <%= radio_button_tag('role', 'actor') %>
+        <%= label_tag('Actor') %>
+      </div>
+    </div>
+    <div class="row">
+      <%= submit_tag("Create") %>
+    </div>
+  </div>
+<% end %>
+
+

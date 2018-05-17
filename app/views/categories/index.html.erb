@@ -1,0 +1,20 @@
+<table class="table table-responsive table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @categories.each do |c| %>
+    <tr>
+      <td class="align_middle"><%= c.name %></td>
+      <td class="align_middle"><%= c.description%></td>
+      <td><%= link_to 'Show', c, class:"btn btn-primary white-button-text" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<td><%= link_to 'New Category', new_category_path, class:"btn btn-primary white-button-text" %></td>

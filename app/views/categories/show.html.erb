@@ -1,0 +1,13 @@
+<h1><span class="glyphicon glyphicon-apple"> Category: <%= @category.name%></span></h1><br>
+
+
+<div class="row ">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Description </strong></h4>
+      <%= @category.description%>
+    </div>
+  </div>
+</div>
+
+<td><%= link_to 'Index', categories_path, class:"btn btn-primary white-button-text" %></td>

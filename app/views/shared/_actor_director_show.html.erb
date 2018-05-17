@@ -1,0 +1,30 @@
+
+<%if object.is_a?(Director)%>
+  <h1><span class="glyphicon glyphicon-user"> Director: <%= object.first_name %> <%= object.last_name %></span></h1><br>
+<%end%>
+<%if object.is_a?(Actor)%>
+  <h1><span class="glyphicon glyphicon-user"> Actor: <%= object.first_name %> <%= object.last_name %></span></h1><br>
+<%end%>
+
+<div class="row ">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Name </strong></h4>
+      <%= object.first_name %> <%= object.last_name %>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Birth Date </strong></h4>
+      <%= object.birth_date %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3 col-md-3 ">
+    <div class="field">
+      <h4><strong>Description </strong></h4>
+      <%= object.description%>
+    </div>
+  </div>
+</div>

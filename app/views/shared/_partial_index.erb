@@ -1,0 +1,19 @@
+<table class="table table-responsive table-striped">
+  <thead>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% object.each do |person| %>
+    <tr>
+      <td class="align_middle"><%= person.first_name %></td>
+      <td class="align_middle"><%= person.last_name %></td>
+      <td><%= link_to 'Show', person, class:"btn btn-primary white-button-text" %></td>
+      <td><%= link_to 'Destroy', person, class:"btn btn-danger white-button-text", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
